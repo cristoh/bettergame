@@ -47,6 +47,9 @@ def game():
 		if roomFound:
 			print "you are in a room"
 		else:
+			#C: something like this?
+			curx -= moveLocation(choice)
+			cury -= moveLocation(choice)
 			print "you hit a wall"
 
 		print "x = %s" % str(curx)
