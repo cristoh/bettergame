@@ -15,7 +15,7 @@ def roll(choice):
 	return hasWon
 def genRoll():
 	compRoll = random.randrange(1,4)
-	print "The niglet rolled a %s " % compRoll 
+	print "The monster rolled a %s " % compRoll 
 	return compRoll
 #end functions
 
@@ -34,7 +34,7 @@ def rips():
 		hasWon = roll(choice)
 		if hasWon == 1:
 			hisHealth -= 10
-			print "u win no health lost. moster has %s health left" % hisHealth
+			print "u win no health lost. monster has %s health left" % hisHealth
 		elif hasWon == -1:
 			myHealth -= 10
 			print "you have %s health left. monster has %s left" % (myHealth, hisHealth)
