@@ -4,6 +4,7 @@ from rps import rips
 # Edited by ye
 
 #variables
+
 #end variables
 
 #functions
@@ -12,7 +13,7 @@ def getDirection():
 	return choice
 
 def moveLocation(choice):
-	if choice == "left" or choicels == "down":
+	if choice == "left" or choice == "down":
 		return -1
 	elif choice == "right" or choice == "up":
 		return 1
@@ -39,21 +40,26 @@ def game():
 		choice = getDirection()
 		if choice == "left" or choice == "right":
 			curx += moveLocation(choice)
+		elif choice == "up" or choice == "down":
+			cury += moveLocation(choice)
 		else:
-			if choice == "up" or choice == "down":
-				cury += moveLocation(choice)
-
+			print "invalid selection"
+			
 		roomFound = findRoom(rooms,curx,cury)
 		if roomFound:
 			print "you are in a room"
 		else:
 			#C: something like this?
-			curx -= moveLocation(choice)
-			cury -= moveLocation(choice)
+			if choice == "left" or choice == "right":
+				curx -= moveLocation(choice)
+			elif choice == "down" or choice == "up":
+				cury -= moveLocation(choice)
 			print "you hit a wall"
 
 		print "x = %s" % str(curx)
 		print "y = %s" % str(cury)
-rips()
+
+### Commented out rips to test coordinate system
+#rips()
 game()
 
